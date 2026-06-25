@@ -21,6 +21,8 @@ app.get("/", (req, res) => {
 app.use("/tasks", taskRoutes);
 app.use("/stats", statsRoutes);
 
-app.listen(9200, () => {
-  console.log("Server running on 9200");
+const PORT = process.env.PORT || 9200;
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
