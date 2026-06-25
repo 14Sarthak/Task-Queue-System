@@ -81,3 +81,11 @@ exports.getTasks = (req, res) => {
   res.json(tasks);
 
 };
+
+exports.clearTasks = (req, res) => {
+  tasks.length = 0;
+
+  res.json({
+    message: "All tasks cleared"
+  });
+};
