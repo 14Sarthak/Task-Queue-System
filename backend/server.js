@@ -10,7 +10,16 @@ const statsRoutes = require("./routes/statsRoutes");
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "https://your-vercel-app.vercel.app" // replace after deploying frontend
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 app.use(express.json());
 
