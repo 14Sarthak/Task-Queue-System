@@ -13,7 +13,7 @@ A full-stack task queue management system built with **React, Node.js, Express, 
 ### Dashboard
 
 <p align="center">
-  <img src="./dashboard.png" alt="Dashboard Preview" width="900">
+  <img src="./Preview.png" alt="Dashboard Preview" width="900">
 </p>
 
 ---
