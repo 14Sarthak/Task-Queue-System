@@ -108,13 +108,13 @@ REDIS_URL=your_redis_connection_string
 
 ### Run the project
 
-#### Backend
+### Run the Backend (Local)
 
 ```bash
 npm start
 ```
 
-Runs on:
+Runs locally at:
 
 ```text
 http://127.0.0.1:9200
