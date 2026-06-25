@@ -1,20 +1,34 @@
-# ⚡ Task Queue System
+#  Task Queue System
 
-A full-stack task queue management system built using **React, Node.js, Express, Redis, and BullMQ** that allows users to create, prioritize, and monitor background tasks in real time.
+A full-stack task queue management system built with **React, Node.js, Express, BullMQ, and Redis**. The application enables users to create, prioritize, and monitor background jobs through an interactive dashboard while demonstrating asynchronous job processing using a Redis-backed queue.
 
-## 🚀 Features
+## 🚀 Live Demo
 
-* Create tasks with different priorities
-* Background task processing using BullMQ
-* Redis-backed job queue
-* Automatic retry mechanism for failed tasks
-* Real-time task status updates
-* Dashboard to monitor tasks and statistics
-* Worker-based asynchronous processing
+👉 ** https://task-queue-system.vercel.app/
+
+
 
 ---
 
-## 🏗️ Tech Stack
+## 📸 Preview
+<img width="1440" height="729" alt="Screenshot 2026-06-26 at 3 00 01 AM" src="https://github.com/user-attachments/assets/afbcafdb-be0c-4b00-8b1a-91c492d1c7bc" />
+
+
+---
+
+## ✨ Features
+
+* Create tasks with different priority levels
+* Background job processing using BullMQ
+* Redis-backed queue management
+* Automatic retry mechanism for failed jobs
+* Real-time dashboard updates
+* Queue statistics (Waiting, Active, Completed, Failed)
+* Asynchronous worker-based processing
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
 
@@ -26,37 +40,30 @@ A full-stack task queue management system built using **React, Node.js, Express,
 * Node.js
 * Express.js
 
-### Queue System
+### Queue & Storage
 
 * BullMQ
-* Redis
+* Redis (Upstash)
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```text
-Task-Queue_System/
-
-├── backend/
+Task-Queue-System
 │
-│   ├── controllers/
-│   │   └── taskController.js
-│
-│   ├── routes/
-│   │   ├── taskRoutes.js
-│   │   └── statsRoutes.js
-│
-│   ├── data.js
+├── backend
+│   ├── controllers
+│   ├── routes
 │   ├── queue.js
 │   ├── redis.js
 │   ├── worker.js
-│   └── server.js
+│   ├── server.js
+│   └── data.js
 │
-├── frontend/
-│
-│   ├── public/
-│   └── src/
+├── frontend
+│   ├── public
+│   └── src
 │
 ├── README.md
 └── .gitignore
@@ -64,142 +71,73 @@ Task-Queue_System/
 
 ---
 
-## ⚙️ System Architecture
-
-```text
-React Dashboard
-
-↓
-
-Express API
-
-↓
-
-BullMQ Queue
-
-↓
-
-Redis
-
-↓
-
-Worker
-
-↓
-
-Background Processing
-```
-
----
-
 ## 📡 API Endpoints
 
-### Create Task
-
-```http
-POST /tasks
-```
-
-Request Body
-
-```json
-{
-  "title": "Generate Report",
-  "priority": 2
-}
-```
+| Method | Endpoint | Description               |
+| ------ | -------- | ------------------------- |
+| POST   | `/tasks` | Create a new task         |
+| GET    | `/tasks` | Retrieve all tasks        |
+| GET    | `/stats` | Retrieve queue statistics |
 
 ---
 
-### Get All Tasks
+## ⚙️ Local Setup
 
-```http
-GET /tasks
+### Clone the repository
+
+```bash
+git clone https://github.com/14Sarthak/Task-Queue-System.git
+cd Task-Queue-System
 ```
 
----
+### Install dependencies
 
-### Get Statistics
-
-```http
-GET /stats
-```
-
-Example Response
-
-```json
-{
-  "waiting": 0,
-  "active": 0,
-  "completed": 1,
-  "failed": 0
-}
-```
-
----
-
-## ▶️ Running Locally
-
-### Backend
+**Backend**
 
 ```bash
 cd backend
-
-node server.js
+npm install
 ```
 
-Backend runs on:
+**Frontend**
+
+```bash
+cd frontend
+npm install
+```
+
+### Configure Redis
+
+Create a `.env` file inside the **backend** directory.
+
+```env
+REDIS_URL=your_redis_connection_string
+```
+
+### Start the application
+
+**Backend**
+
+```bash
+npm start
+```
+
+Runs on:
 
 ```text
 http://127.0.0.1:9200
 ```
 
-### Frontend
+**Frontend**
 
 ```bash
-cd frontend
-
 npm start
 ```
 
-Frontend runs on:
+Runs on:
 
 ```text
 http://localhost:3000
-```
-
----
-
-## 🛠️ Installation
-
-### Backend
-
-```bash
-npm install
-```
-
-### Frontend
-
-```bash
-npm install
-```
-
-### Start Redis
-
-```bash
-brew services start redis
-```
-
-Verify:
-
-```bash
-redis-cli ping
-```
-
-Expected:
-
-```text
-PONG
 ```
 
 ---
@@ -209,29 +147,22 @@ PONG
 * MongoDB persistence
 * User authentication
 * Task deletion
-* Search and filtering
+* Search & filtering
 * WebSocket live updates
 * Docker support
-* Deployment with Vercel + Render + Upstash
 
 ---
 
-## 🎯 Learning Outcomes
+## 📚 Learning Outcomes
 
 This project demonstrates:
 
 * Background job processing
+* Queue management with BullMQ
+* Redis integration
+* REST API development
 * Asynchronous architecture
-* Queue management
-* Priority scheduling
-* Retry mechanisms
-* Full-stack integration
-* API design
+* Full-stack application deployment
 
 ---
 
-## 👨‍💻 Author
-
-**Sarthak Jain**
-
-GitHub: https://github.com/14Sarthak
