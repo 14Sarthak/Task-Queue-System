@@ -4,46 +4,38 @@ A full-stack task queue management system built with **React, Node.js, Express, 
 
 ## 🚀 Live Demo
 
-👉 ** https://task-queue-system.vercel.app/
-
-
+👉 **https://task-queue-system.vercel.app/**
 
 ---
 
 ## 📸 Preview
-<img width="1440" height="729" alt="Screenshot 2026-06-26 at 3 00 01 AM" src="https://github.com/user-attachments/assets/afbcafdb-be0c-4b00-8b1a-91c492d1c7bc" />
 
+### Dashboard
+
+<p align="center">
+  <img src="./dashboard.png" alt="Dashboard Preview" width="900">
+</p>
 
 ---
 
 ## ✨ Features
 
-* Create tasks with different priority levels
-* Background job processing using BullMQ
+* Create and prioritize background tasks
+* Process jobs asynchronously using BullMQ
 * Redis-backed queue management
 * Automatic retry mechanism for failed jobs
-* Real-time dashboard updates
+* Real-time task dashboard
 * Queue statistics (Waiting, Active, Completed, Failed)
-* Asynchronous worker-based processing
+* Worker-based background processing
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
-* React
-* Axios
-
-### Backend
-
-* Node.js
-* Express.js
-
-### Queue & Storage
-
-* BullMQ
-* Redis (Upstash)
+| Frontend | Backend    | Queue           |
+| -------- | ---------- | --------------- |
+| React    | Node.js    | BullMQ          |
+| Axios    | Express.js | Redis (Upstash) |
 
 ---
 
@@ -92,14 +84,14 @@ cd Task-Queue-System
 
 ### Install dependencies
 
-**Backend**
+#### Backend
 
 ```bash
 cd backend
 npm install
 ```
 
-**Frontend**
+#### Frontend
 
 ```bash
 cd frontend
@@ -114,9 +106,9 @@ Create a `.env` file inside the **backend** directory.
 REDIS_URL=your_redis_connection_string
 ```
 
-### Start the application
+### Run the project
 
-**Backend**
+#### Backend
 
 ```bash
 npm start
@@ -128,7 +120,7 @@ Runs on:
 http://127.0.0.1:9200
 ```
 
-**Frontend**
+#### Frontend
 
 ```bash
 npm start
@@ -148,7 +140,7 @@ http://localhost:3000
 * User authentication
 * Task deletion
 * Search & filtering
-* WebSocket live updates
+* WebSocket-based live updates
 * Docker support
 
 ---
@@ -161,7 +153,7 @@ This project demonstrates:
 * Queue management with BullMQ
 * Redis integration
 * REST API development
-* Asynchronous architecture
+* Asynchronous system design
 * Full-stack application deployment
 
 ---
