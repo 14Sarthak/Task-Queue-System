@@ -3,6 +3,13 @@ import axios from "axios";
 import "./App.css";
 const API = "https://task-queue-system-1.onrender.com";
 
+const priorityLabels = {
+  1: "🔴 Critical",
+  2: "🟠 High",
+  3: "🟡 Medium",
+  4: "🟢 Low",
+};
+
 function App() {
 
   const [tasks, setTasks] = useState([]);
@@ -177,13 +184,13 @@ function App() {
 
             <span>
 
-              P{task.priority}
+               {priorityLabels[task.priority]}
 
             </span>
 
             <span>
 
-              {task.status}
+              {task.status.charAt(0).toUpperCase() + task.status.slice(1)}
 
             </span>
 
