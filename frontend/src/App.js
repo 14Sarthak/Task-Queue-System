@@ -79,7 +79,7 @@ function App() {
 
     <div className="container">
 
-      <h1>⚡ Task Queue Dashboard</h1>
+      <h1> Task Queue Dashboard</h1>
 
       <div className="stats">
 
