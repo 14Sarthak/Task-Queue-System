@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+const API = "https://task-queue-system-1.onrender.com";
 
 function App() {
 
@@ -16,13 +17,9 @@ function App() {
 
     try {
 
-      const taskRes = await axios.get(
-        "http://127.0.0.1:9200/tasks"
-      );
+     const taskRes = await axios.get(`${API}/tasks`);
 
-      const statsRes = await axios.get(
-        "http://127.0.0.1:9200/stats"
-      );
+      const statsRes = await axios.get(`${API}/stats`);
 
       setTasks(taskRes.data);
 
@@ -55,19 +52,10 @@ function App() {
 
     if (!title) return;
 
-    await axios.post(
-
-      "http://127.0.0.1:9200/tasks",
-
-      {
-
-        title,
-
-        priority
-
-      }
-
-    );
+    await axios.post(`${API}/tasks`, {
+       title,
+       priority
+    });
 
     setTitle("");
 
